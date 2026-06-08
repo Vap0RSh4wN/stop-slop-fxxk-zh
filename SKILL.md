@@ -32,6 +32,8 @@ Eliminate predictable AI writing patterns from prose.
 
 Use these additions when editing Chinese technical notes, source-code reading notes, protocol analysis, or engineering documentation.
 
+Apply these rules directly to Chinese prose. Preserve Chinese as the working language; do not translate the text into English, and do not force English rhetorical patterns onto Chinese technical writing.
+
 1. **Write mechanisms directly.** Prefer concrete execution flow, inputs, outputs, and code relationships. Avoid loose claims such as "本质上", "真正", "核心", "非常", "其实", "简单来说" when the sentence can name the mechanism.
 
 2. **Use sequence words only when they carry structure.** Words like "首先", "其次", "最后" are fine for real ordered steps. Do not use them as a default paragraph rhythm or as filler before every point.
@@ -47,6 +49,24 @@ Use these additions when editing Chinese technical notes, source-code reading no
 7. **Use examples that match the real object.** A simplified example must return to the actual engineering object before the paragraph ends. For example, a Boolean-table intuition for a selector should connect back to random-point evaluation of the selector polynomial.
 
 8. **Prefer source-anchored symbols.** In protocol notes, align notation with official docs or papers when available. If no stable notation exists, tie symbols to source variable names so later code reading stays consistent.
+
+9. **Remove casual metaphors from technical mechanisms.** Replace phrases like "event bucket", "black box", "run eval", "squash into", "drop into", or "feed into" with the actual source object or protocol action: event collection, verifier logic, call `Air::eval`, random linear combination, reduction, mapping, commitment, opening claim.
+
+10. **Follow the real call chain in source-reading notes.** When a function calls another function, enter the callee, explain the local state transition, then return to the caller. Avoid detached overviews that list modules without showing execution order.
+
+11. **Preserve good existing prose and comments.** Edit only the part that is vague, misleading, too colloquial, or missing necessary context. Do not rewrite a stable paragraph just to make the style uniform.
+
+12. **Make long technical sections locally readable.** When a section introduces a symbol, variable dimension, challenge, structure field, or protocol object, define it near first use or point to the exact earlier section. Do not force the reader to remember a long front-loaded glossary.
+
+13. **Use exact source nouns for data containers.** Prefer `ExecutionRecord` event collection, trace matrix, column MLE, padded row, padding column, dense representation, prover data, verifier key, and opening claim over loose terms like "bucket", "list of things", "the packed data", or "the proof stuff".
+
+14. **Keep protocol boundaries explicit.** Say whether a mechanism belongs to execution witness generation, AIR/constraint evaluation, PIOP, PCS commitment/opening, transcript binding, or recursion verification. This prevents prose from merging constraint validity with commitment binding.
+
+15. **Use diagrams and tables selectively.** Prefer prose or Mermaid diagrams when they clarify data flow, containment, or verification dependency. If a diagram uses arrows, keep one arrow meaning per diagram and make the prose match it.
+
+16. **Avoid unnecessary inline code styling.** Use backticks for real code identifiers, paths, commands, and source strings. Do not wrap ordinary English terms or repeated conceptual nouns in backticks for emphasis.
+
+17. **For source comments, attach context to the right item.** Function-level and struct-field teaching comments should describe upstream input, local role, and downstream consumer. Keep Rust `///` comments attached to the item they document; do not let macro-level comments drift onto the next field or function.
 
 ## Quick Checks
 
@@ -67,6 +87,13 @@ Before delivering prose:
 - Chinese concept quotes around ordinary terms? Remove them unless they are source strings, exact wording, citations, Mermaid syntax, or code.
 - Chinese sequence words everywhere? Keep "首先/其次/最后" only when the paragraph has a real ordered sequence.
 - Chinese technical paragraph after code missing upstream/current/downstream context? Add the calling function, local mechanism, and consumed result.
+- Technical metaphor hiding a real object? Replace it with the source type, field, function, or protocol step.
+- Source-reading section jumps across modules without execution order? Rewrite it as caller -> callee -> return-to-caller.
+- Long section relies on a glossary from many pages earlier? Add a local definition or precise back-reference.
+- Protocol layer blurred? Name the layer: witness generation, AIR, PIOP, PCS, transcript, verifier, or recursion.
+- Diagram arrows mean multiple things? Split the diagram or rewrite labels until every arrow has one meaning.
+- Backticks around ordinary concepts? Remove them unless the text names code, commands, paths, source strings, or exact literals.
+- Rust doc comment added? Check it still attaches to the intended function, struct, enum variant, or field.
 
 ## Scoring
 
