@@ -132,3 +132,27 @@ Wh- openers become a crutch. "What makes this hard is..." becomes "The constrain
 |---------|---------|
 | Lazy extremes (every, always, never, everyone, everybody, nobody) | False authority. Use specifics instead of sweeping claims. |
 | All adverbs (-ly words, "really," "just," "literally," "genuinely," "honestly," "simply," "actually") | Empty emphasis. See phrases.md for full list. |
+
+## Chinese Technical Note Structures
+
+Use these checks when editing Chinese source-reading notes, protocol notes, and engineering documentation.
+
+| Pattern | Problem | Fix |
+|---------|---------|-----|
+| "不是 X，而是 Y" / "并非 X，而是 Y" | Mechanical contrast delays the claim. | State Y directly, then explain the mechanism. |
+| "不只是 X，还 Y" | Additive hedge often hides the main role. | Name the roles separately if both matter. |
+| "可以理解为 X" without returning to source objects | The simplified image may replace the real protocol object in the reader's head. | Explain the intuition, then map it back to the source variable, function, or proof claim. |
+| "所谓 X" | Adds distance and weakens confidence. | Name X and define it. |
+| Ordinary technical terms inside Chinese quotes | Makes every concept look provisional or slogan-like. | Remove quotes unless quoting source text, UI text, Mermaid syntax, code, or a citation. |
+| Code excerpt followed by line-by-line paraphrase | Low signal; the reader can read the code. | Explain upstream caller, local mechanism, downstream consumer, and why this snippet changes the proof or execution state. |
+| Formula mixed into Rust code fences | Confuses code with math. | Put formulas in Markdown LaTeX and keep Rust fences for real source code. |
+| Sequence words before every paragraph | Creates artificial ordering. | Use "首先/其次/最后" only for actual ordered steps. |
+
+### Source-Reading Paragraph Shape
+
+A strong Chinese technical paragraph after a code excerpt usually answers these questions without announcing them:
+
+- Which caller or data object brought execution here?
+- Which fields, variables, or claims does this layer create or transform?
+- Which downstream function, proof, verifier step, or commitment consumes the result?
+- If a simplified example appears, how does it map back to the real source object?

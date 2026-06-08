@@ -126,3 +126,60 @@ Sentences that announce importance without naming the specific thing. Kill these
 - "The consequences are real"
 
 If a sentence says something is important/deep/structural without showing the specific thing, cut it or replace it with the specific thing.
+
+## Chinese Technical Note Phrases
+
+These Chinese phrases often weaken technical notes when they are used as filler. They are not all banned in every context; use them as review targets.
+
+### Mechanical Openers and Section Fillers
+
+- "本文"
+- "本次分享将"
+- "接下来"
+- "下面"
+- "前面已经说过"
+- "值得注意的是"
+- "需要注意的是"
+- "简单来说"
+- "换句话说"
+- "可以理解为"
+
+### Overused Sequence Words
+
+Keep these only when the paragraph describes a real ordered sequence:
+
+- "首先"
+- "其次"
+- "最后"
+- "第一"
+- "第二"
+- "第三"
+
+### Weak Emphasis
+
+Replace these with the actual mechanism, field, function, claim, or protocol step:
+
+- "本质上"
+- "核心"
+- "真正"
+- "非常"
+- "其实"
+- "完全"
+- "很重要"
+- "很有用"
+- "更稳"
+- "最容易"
+- "只需要"
+- "就能"
+- "也就是"
+
+### Concept Quotes
+
+Avoid Chinese quotes around ordinary technical terms:
+
+- "所谓“X”"
+- "这个“X”"
+- "这里的“X”"
+- "称为“X”"
+
+Keep quotes when they mark source strings, UI text, exact wording under analysis, direct citations, Mermaid syntax, or code snippets.
