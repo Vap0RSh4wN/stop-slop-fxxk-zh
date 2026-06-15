@@ -133,6 +133,47 @@ Wh- openers become a crutch. "What makes this hard is..." becomes "The constrain
 | Lazy extremes (every, always, never, everyone, everybody, nobody) | False authority. Use specifics instead of sweeping claims. |
 | All adverbs (-ly words, "really," "just," "literally," "genuinely," "honestly," "simply," "actually") | Empty emphasis. See phrases.md for full list. |
 
+## Low-Information Sentences
+
+These failures are broader than any fixed blacklist. Use the checks below to catch new AI-sounding wording before it settles into a draft.
+
+### Four Information Slots
+
+A sentence should usually reveal these items near the surface:
+
+- object: what file, function, section, claim, proof step, review target, or artifact is being discussed
+- action: what operation happens to that object
+- result: what changes, appears, or becomes available after the action
+- destination: who reads, uses, consumes, or depends on that result
+
+If two or more slots are missing, the sentence often turns into posture, rhythm, or process-theater.
+
+### Deletion Test
+
+Delete the sentence and ask what disappears.
+
+- If you lose an object, action, result, condition, or dependency, keep the sentence.
+- If you lose only tone, transition, pacing, reassurance, or a vague sense of progress, cut it or fuse the real information into a nearby sentence.
+
+### Verb Substitution Test
+
+Swap the main verb with several neighbors.
+
+- If `检查` can become `看一下`, `过一遍`, `带一下`, `收一遍`, `兜一下`, or `处理一下` with almost no meaning change, the sentence does not name the operation yet.
+- Keep rewriting until changing the verb would change the actual work.
+
+### Rewrite Frame
+
+When a sentence fails the checks above, rewrite it with this frame:
+
+`对象 -> 动作 -> 结果 -> 落点`
+
+Examples:
+
+- `这一节列出高风险句型，改稿时对照这里检查。`
+- `我先检查这几处标题，再把修改写进README.md。`
+- `references/examples.md`收录坏句子和对应改写，卡住时先对照这里。
+
 ## Chinese Technical Note Structures
 
 Use these checks when editing Chinese source-reading notes, protocol notes, and engineering documentation.
@@ -147,6 +188,10 @@ Use these checks when editing Chinese source-reading notes, protocol notes, and 
 | Code excerpt followed by line-by-line paraphrase | Low signal; the reader can read the code. | Explain upstream caller, local mechanism, downstream consumer, and why this snippet changes the proof or execution state. |
 | Formula mixed into Rust code fences | Confuses code with math. | Put formulas in Markdown LaTeX and keep Rust fences for real source code. |
 | Sequence words before every paragraph | Creates artificial ordering. | Use "首先/其次/最后" only for actual ordered steps. |
+| "目标很直接" / "核心原则" / "这版额外解决的问题" | The heading summarizes the writer's attitude instead of naming the object. | Turn the heading into the object, changed behavior, or review target: "这个版本会删掉的写法", "新增的中文写作约束", "安装步骤". |
+| "`X`放Y" / "这一节讲X" / "这里写X" | Container verbs hide what the file or section actually contains. | Replace `放/讲/写` with `定义/列出/解释/对比/给出/收录`, then name the payload. |
+| "`SKILL.md`放核心规则" / "`examples.md`放示例" | The sentence points to a location but not to the information or when to use it. | State payload plus use moment: "`SKILL.md`定义改写规则，改稿前先看这里" or "`references/examples.md`收录坏句子和对应改写，卡住时先对照这里". |
+| "我先收一遍" / "这个直接落地" | The sentence reports pace or attitude instead of the actual operation. | Replace it with the real action: "我先检查这几处差异" or "我现在把这条规则补进SKILL.md和README". |
 
 ### Source-Reading Paragraph Shape
 

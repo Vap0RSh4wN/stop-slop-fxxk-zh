@@ -121,3 +121,78 @@
 > 这个proof会在verifier侧继续检查。
 
 **Changes:** Removed mechanical bilingual spacing.
+
+---
+
+### Example 11: Summary Heading Instead of Object
+
+**Before:**
+> ## 这版额外解决的问题
+
+**After:**
+> ## 这个版本新增的中文写作约束
+
+**Changes:** Replaced a self-summarizing heading with a heading that names the actual content.
+
+---
+
+### Example 12: Container Verb in File Description
+
+**Before:**
+> SKILL.md放核心规则，references/examples.md放示例。
+
+**After:**
+> `SKILL.md`定义改写时要遵守的规则，`references/examples.md`收录坏句子和对应改写。
+
+**Changes:** Replaced the vague verb "放" with exact document actions and named the payload in each file.
+
+---
+
+### Example 13: Status Word Instead of Action
+
+**Before:**
+> 我先收一遍，再直接落地。
+
+**After:**
+> 我先检查这几处标题和说明句，再把改动写进`SKILL.md`和`README.md`。
+
+**Changes:** Replaced progress-report wording with the actual operations.
+
+**Diagnostic:**
+- object missing in the first version
+- action replaced by progress-report wording
+- result and destination both absent
+
+**Rewrite frame:** object -> action -> result -> destination
+
+---
+
+### Example 14: Deletion Test
+
+**Before:**
+> 这里我先兜一下整体思路。
+
+**After:**
+> 这一节先列出三个检查点：标题、文件说明句、检查命令。
+
+**Changes:** The original sentence only staged the explanation. Deleting it lost no real information. The rewrite names the actual section payload.
+
+**Diagnostic:**
+- deleting the first sentence loses only pacing
+- the rewrite makes deletion costly because the three objects disappear
+
+---
+
+### Example 15: Verb Substitution Test
+
+**Before:**
+> 我再带一下 README 这一段。
+
+**After:**
+> 我再重写 README 里安装说明后面的两段，把标题改成对象名，把说明句改成文件承载的信息。
+
+**Changes:** The original verb could be swapped with many vague neighbors. The rewrite names the exact edit scope and operation.
+
+**Diagnostic:**
+- `带一下` could be replaced by `过一下`, `顺一下`, `看一下`, `收一下`
+- `重写` cannot be swapped out without changing the work itself

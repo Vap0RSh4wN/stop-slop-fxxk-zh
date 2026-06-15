@@ -173,6 +173,32 @@ Replace these with the actual mechanism, field, function, claim, or protocol ste
 - "就能"
 - "也就是"
 
+### Summary Labels and Container Verbs
+
+Treat these as review targets when they only announce structure or attitude without naming the real object:
+
+- "目标很直接"
+- "这版额外解决的问题"
+- "核心原则"
+- "这一部分做什么"
+- "这一节讲"
+- "这里讲"
+- "这里放"
+- "`X` 放 Y"
+- "`X` 里放了 Y"
+
+### Status Words Posing as Actions
+
+Treat these as review targets when they report a sense of progress without naming the actual operation:
+
+This section is not exhaustive. New phrases should still be cut when they only report pace, confidence, or workflow mood.
+
+- "收一遍"
+- "过一遍"
+- "直接落地"
+- "兜一下"
+- "带一下"
+
 ### Concept Quotes
 
 Avoid Chinese quotes around ordinary technical terms:

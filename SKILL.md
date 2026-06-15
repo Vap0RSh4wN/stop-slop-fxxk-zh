@@ -96,6 +96,20 @@ Apply these rules directly to Chinese prose. Preserve Chinese as the working lan
 27. **Keep prose local and assertive.** Start each paragraph with the object, action, or claim it exists to describe. Remove warm-up sentences, recap sentences, transition padding, and commentary about the explanation itself.
 
 28. **Prefer exact nouns over summary labels.** Replace words such as "这个东西", "这部分内容", "这个过程", "这块逻辑" with the exact function, field, file, event, request, record, proof object, or state transition.
+
+29. **Make headings name the object, not the author's summary.** Avoid headings such as "目标很直接", "核心原则", "这版额外解决的问题", or "这一部分做什么" when they only summarize the writer's stance. A heading should name the actual object, changed behavior, file role, or review target, such as "这个版本会删掉的写法", "新增的中文写作约束", "安装步骤", or "高风险句型".
+
+30. **Do not use container verbs for document structure.** In technical prose, verbs such as "放", "讲", "写这个", or "做个说明" often hide what the section, file, or paragraph actually contains. Replace them with the real document action: `定义`, `列出`, `解释`, `对比`, `给出`, `收录`, `规定`, or another exact verb that names the payload.
+
+31. **Describe files and sections by payload and use moment.** A line such as "`SKILL.md`放核心规则" names a location, not information. Say what the file carries and when it is used: "`SKILL.md`定义改写规则，改稿前先看这里" or "`references/examples.md`收录坏句子和对应改写，卡住时先对照这里".
+
+32. **Do not use status words as fake actions.** Phrases such as "收一遍", "直接落地", "兜一下", "过一遍", "带一下", or similar progress-report verbs often describe mood or pace instead of the real operation. Replace them with the exact action: `检查差异`, `补充规则`, `重写标题`, `同步副本`, `提交改动`, `运行测试`, or another concrete verb-object pair.
+
+33. **Judge the sentence by information slots, not by a blacklist.** A sentence is weak when it cannot answer these four questions near the surface: what object is under discussion, what action happens, what result is produced, and who uses or receives that result. This rule catches new AI-sounding phrases even when they are not listed anywhere.
+
+34. **Use deletion and substitution tests on suspicious sentences.** If you can delete a sentence and lose only tone, pacing, or a sense of progress, cut it. If you can replace the key verb with many near-synonyms and the meaning barely changes, the verb is too vague. Rewrite the sentence until deleting it would remove real information and swapping the verb would change the operation.
+
+35. **Rewrite low-information sentences with a concrete frame.** When a sentence feels like progress-reporting, explanation-staging, or section-labeling, rewrite it as `对象 -> 动作 -> 结果 -> 落点`. Example: "`SKILL.md`定义改写规则，改稿前先看这里"; "我先检查这几处标题，再把修改写进README"; "这一节列出高风险句型，改稿时对照这里检查".
 ## Quick Checks
 
 Before delivering prose:
@@ -126,6 +140,13 @@ Before delivering prose:
 - Any vague structure word such as "调用链" or "时间线" without the explicit sequence? Replace it with the actual sequence.
 - Any vague transport or compression verb such as "压成", "塞进", or "串起来"? Name the real operation.
 - Any word such as "直觉", "核心", "本质", or "机制" without a concrete statement right after it? Delete it or complete it.
+- Any heading summarizing your attitude instead of naming the object, change, or file role? Rewrite the heading.
+- Any file or section description using "放", "讲", or another container verb? Replace it with the exact document action and payload.
+- Any sentence naming only where information sits, but not what the reader gets or when to use it? Add the payload and use moment.
+- Any status verb such as "收一遍", "过一遍", or "直接落地" standing in for the real action? Replace it with the concrete operation.
+- Can the sentence answer `对象 / 动作 / 结果 / 落点` without outside context? If not, rewrite it.
+- If you delete the sentence, do you lose only rhythm or attitude but no concrete information? Cut it.
+- Can you swap the main verb for many similar words without changing the meaning much? Replace it with the real operation.
 - Any AI-style spacing around English words inside Chinese prose? Remove it.
 - Backticks around ordinary concepts or routine identifiers? Remove them unless the text needs exact syntax.
 - Table where a paragraph or diagram would read better? Rewrite it.
