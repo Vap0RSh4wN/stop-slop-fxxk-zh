@@ -49,51 +49,53 @@ Apply these rules directly to Chinese prose. Preserve Chinese as the working lan
 
 4. **Reduce quotation marks around concepts.** Do not wrap ordinary technical terms in Chinese quotes or double quotes. Keep quotes for source strings, UI text, exact wording under analysis, direct citations, Mermaid syntax, or code snippets.
 
-5. **Keep code and formulas in their own lanes.** Use Markdown LaTeX for formulas and code blocks for real code or literal examples. Do not put explanatory prose inside a Rust code block unless it is a source comment.
+5. **Use Chinese punctuation by sentence relation.** Do not split every short clause into a full stop. Use commas for tight parallel clauses, semicolons for longer parallel clauses that already contain commas, and colons when the next part unfolds a list, rule, or result. Do not let punctuation imitate AI rhythm.
 
-6. **Explain code by role and state transition.** Do not paraphrase obvious lines just to mirror the source. For code excerpts and source comments, attach upstream input, local transformation, and downstream consumer to the exact line, field, or function that needs explanation.
+6. **Keep code and formulas in their own lanes.** Use Markdown LaTeX for formulas and code blocks for real code or literal examples. Do not put explanatory prose inside a Rust code block unless it is a source comment.
 
-7. **Use examples that match the real object.** A simplified example must return to the actual engineering object before the paragraph ends. For example, a Boolean-table intuition for a selector should connect back to random-point evaluation of the selector polynomial.
+7. **Explain code by role and state transition.** Do not paraphrase obvious lines just to mirror the source. For code excerpts and source comments, attach upstream input, local transformation, and downstream consumer to the exact line, field, or function that needs explanation.
 
-8. **Prefer source-anchored symbols.** In protocol notes, align notation with official docs or papers when available. If no stable notation exists, tie symbols to source variable names so later code reading stays consistent.
+8. **Use examples that match the real object.** A simplified example must return to the actual engineering object before the paragraph ends. For example, a Boolean-table intuition for a selector should connect back to random-point evaluation of the selector polynomial.
 
-9. **Remove casual metaphors from technical mechanisms.** Replace phrases like "事件桶", "黑盒", "跑一遍", "压成", "落成", "塞进", "喂给", "吃掉", "打通", "串起来", "这条链压成", "event bucket", "black box", "run eval", "squash into", "drop into", or "feed into" with the actual source object or protocol action.
+9. **Prefer source-anchored symbols.** In protocol notes, align notation with official docs or papers when available. If no stable notation exists, tie symbols to source variable names so later code reading stays consistent.
 
-10. **Follow the real execution order in source-reading notes.** When a function calls another function, enter the callee, explain the local state transition, then return to the caller. Avoid detached overviews that list modules without showing execution order. Avoid placeholder words such as "调用链", "时间线", "这条链", or "这一层" when the exact sequence can be written directly.
+10. **Remove casual metaphors from technical mechanisms.** Replace phrases like "事件桶", "黑盒", "跑一遍", "压成", "落成", "塞进", "喂给", "吃掉", "打通", "串起来", "这条链压成", "event bucket", "black box", "run eval", "squash into", "drop into", or "feed into" with the actual source object or protocol action.
 
-11. **Preserve good existing prose and comments.** Edit only the part that is vague, misleading, too colloquial, or missing necessary context. Do not rewrite a stable paragraph just to make the style uniform.
+11. **Follow the real execution order in source-reading notes.** When a function calls another function, enter the callee, explain the local state transition, then return to the caller. Avoid detached overviews that list modules without showing execution order. Avoid placeholder words such as "调用链", "时间线", "这条链", or "这一层" when the exact sequence can be written directly.
 
-12. **Make long technical sections locally readable.** When a section introduces a symbol, variable dimension, challenge, structure field, or protocol object, define it near first use or point to the exact earlier section. Do not force the reader to remember a long front-loaded glossary.
+12. **Preserve good existing prose and comments.** Edit only the part that is vague, misleading, too colloquial, or missing necessary context. Do not rewrite a stable paragraph just to make the style uniform.
 
-13. **Use exact source nouns for data containers.** Prefer `ExecutionRecord` event collection, trace matrix, column MLE, padded row, padding column, dense representation, prover data, verifier key, and opening claim over loose terms like "bucket", "list of things", "the packed data", or "the proof stuff".
+13. **Make long technical sections locally readable.** When a section introduces a symbol, variable dimension, challenge, structure field, or protocol object, define it near first use or point to the exact earlier section. Do not force the reader to remember a long front-loaded glossary.
 
-14. **Keep protocol boundaries explicit.** Say whether a mechanism belongs to execution witness generation, AIR/constraint evaluation, PIOP, PCS commitment/opening, transcript binding, or recursion verification. This prevents prose from merging constraint validity with commitment binding.
+14. **Use exact source nouns for data containers.** Prefer `ExecutionRecord` event collection, trace matrix, column MLE, padded row, padding column, dense representation, prover data, verifier key, and opening claim over loose terms like "bucket", "list of things", "the packed data", or "the proof stuff".
 
-15. **Prefer diagrams over tables for structure.** Use prose by default. Use Mermaid diagrams when they clarify data flow, containment, execution order, or verification dependency. Use tables only when the reader must compare aligned dimensions side by side. If a diagram uses arrows, keep one arrow meaning per diagram and make the prose match it.
+15. **Keep protocol boundaries explicit.** Say whether a mechanism belongs to execution witness generation, AIR/constraint evaluation, PIOP, PCS commitment/opening, transcript binding, or recursion verification. This prevents prose from merging constraint validity with commitment binding.
 
-16. **Avoid inline code styling by default.** Do not use backticks for emphasis, routine identifiers, repeated conceptual nouns, or ordinary English terms inside Chinese prose. Keep them only for exact literals, commands, paths, syntax that would become ambiguous without marking, or executable text copied verbatim.
+16. **Prefer diagrams over tables for structure.** Use prose by default. Use Mermaid diagrams when they clarify data flow, containment, execution order, or verification dependency. Use tables only when the reader must compare aligned dimensions side by side. If a diagram uses arrows, keep one arrow meaning per diagram and make the prose match it.
 
-17. **For source comments, attach context to the right item.** Function-level and struct-field teaching comments should describe upstream input, local role, and downstream consumer. Keep Rust `///` comments attached to the item they document; do not let macro-level comments drift onto the next field or function.
+17. **Avoid inline code styling by default.** Do not use backticks for emphasis, routine identifiers, repeated conceptual nouns, or ordinary English terms inside Chinese prose. Keep them only for exact literals, commands, paths, syntax that would become ambiguous without marking, or executable text copied verbatim.
 
-18. **Remove narrator voice and self-talk.** Cut lines such as "下面", "接下来", "这里可以看到", "我们先看", "再看", "本文", "本节", "这一段", "let us", "we now", or "as we will see" when they describe the explanation instead of the subject.
+18. **For source comments, attach context to the right item.** Function-level and struct-field teaching comments should describe upstream input, local role, and downstream consumer. Keep Rust `///` comments attached to the item they document; do not let macro-level comments drift onto the next field or function.
 
-19. **Do not instruct the reader.** Remove phrases such as "你可以把它看成", "读者需要注意", "可以先记住", "想象一下". State the object, relation, or operation directly.
+19. **Remove narrator voice and self-talk.** Cut lines such as "下面", "接下来", "这里可以看到", "我们先看", "再看", "本文", "本节", "这一段", "let us", "we now", or "as we will see" when they describe the explanation instead of the subject.
 
-20. **Replace vague structure labels with explicit sequences.** Do not use words like "调用链", "时间线", "流程线", "这部分逻辑", or "这一块内容" as stand-ins for actual structure. Write the functions, events, fields, or state transitions in order.
+20. **Do not instruct the reader.** Remove phrases such as "你可以把它看成", "读者需要注意", "可以先记住", "想象一下". State the object, relation, or operation directly.
 
-21. **Ban empty summary nouns unless they resolve locally.** Words such as "直觉", "本质", "核心", "机制", "逻辑", "图景", or "语义" must resolve to a concrete sentence immediately after they appear. Otherwise delete them.
+21. **Replace vague structure labels with explicit sequences.** Do not use words like "调用链", "时间线", "流程线", "这部分逻辑", or "这一块内容" as stand-ins for actual structure. Write the functions, events, fields, or state transitions in order.
 
-22. **Cut AI cadence and stock scaffolding.** Avoid formulas such as "一方面……另一方面……", "从A到B", "先……再……最后……" when they are only rhythmic scaffolding. Avoid "X负责……Y负责……" unless responsibility is the actual structure being described.
+22. **Ban empty summary nouns unless they resolve locally.** Words such as "直觉", "本质", "核心", "机制", "逻辑", "图景", or "语义" must resolve to a concrete sentence immediately after they appear. Otherwise delete them.
 
-23. **Keep Chinese-English typography tight.** Do not add AI-style visual padding around English words inside Chinese prose unless the text is a command, URL, exact syntax string, or copied literal.
+23. **Cut AI cadence and stock scaffolding.** Avoid formulas such as "一方面……另一方面……", "从A到B", "先……再……最后……" when they are only rhythmic scaffolding. Avoid "X负责……Y负责……" unless responsibility is the actual structure being described.
 
-24. **Reduce quotation marks.** Avoid quotation marks around ordinary terms, labels, or emphasis. Use them only for exact source text, UI text, citations, literal strings, or material under analysis.
+24. **Keep Chinese-English typography tight.** Do not add AI-style visual padding around English words inside Chinese prose unless the text is a command, URL, exact syntax string, or copied literal.
 
-25. **Reduce formatting noise.** Do not use backticks, bold, italics, or quotation marks as substitutes for sentence control. Let nouns and verbs carry the emphasis.
+25. **Reduce quotation marks.** Avoid quotation marks around ordinary terms, labels, or emphasis. Use them only for exact source text, UI text, citations, literal strings, or material under analysis.
 
-26. **Keep prose local and assertive.** Start each paragraph with the object, action, or claim it exists to describe. Remove warm-up sentences, recap sentences, transition padding, and commentary about the explanation itself.
+26. **Reduce formatting noise.** Do not use backticks, bold, italics, or quotation marks as substitutes for sentence control. Let nouns and verbs carry the emphasis.
 
-27. **Prefer exact nouns over summary labels.** Replace words such as "这个东西", "这部分内容", "这个过程", "这块逻辑" with the exact function, field, file, event, request, record, proof object, or state transition.
+27. **Keep prose local and assertive.** Start each paragraph with the object, action, or claim it exists to describe. Remove warm-up sentences, recap sentences, transition padding, and commentary about the explanation itself.
+
+28. **Prefer exact nouns over summary labels.** Replace words such as "这个东西", "这部分内容", "这个过程", "这块逻辑" with the exact function, field, file, event, request, record, proof object, or state transition.
 ## Quick Checks
 
 Before delivering prose:
@@ -111,6 +113,7 @@ Before delivering prose:
 - Narrator-from-a-distance or self-conscious setup? Remove it and state the subject directly.
 - Meta-joiners ("The rest of this essay...")? Delete. Let the essay move.
 - Chinese concept quotes around ordinary terms? Remove them unless they are source strings, exact wording, citations, Mermaid syntax, or code.
+- Chinese punctuation broken into too many short full stops? Merge tight clauses with commas, use semicolons only when the parallel clauses are long or internally comma-heavy, and use colons for unfoldings or lists.
 - Chinese sequence words everywhere? Keep "首先/其次/最后" only when the paragraph has a real ordered sequence.
 - Chinese technical paragraph after code missing upstream/current/downstream context? Add the calling function, local mechanism, and consumed result.
 - Technical metaphor hiding a real object? Replace it with the source type, field, function, or protocol step.
