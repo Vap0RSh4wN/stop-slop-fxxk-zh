@@ -110,6 +110,8 @@ Apply these rules directly to Chinese prose. Preserve Chinese as the working lan
 34. **Use deletion and substitution tests on suspicious sentences.** If you can delete a sentence and lose only tone, pacing, or a sense of progress, cut it. If you can replace the key verb with many near-synonyms and the meaning barely changes, the verb is too vague. Rewrite the sentence until deleting it would remove real information and swapping the verb would change the operation.
 
 35. **Rewrite low-information sentences with a concrete frame.** When a sentence feels like progress-reporting, explanation-staging, or section-labeling, rewrite it as `对象 -> 动作 -> 结果 -> 落点`. Example: "`SKILL.md`定义改写规则，改稿前先看这里"; "我先检查这几处标题，再把修改写进README"; "这一节列出高风险句型，改稿时对照这里检查".
+
+36. **Introduce lists with the list content, not with writer posture.** Before bullets, numbered steps, or inline enumerations, do not stage the list with lines such as "这个版本专门……", "这里重点……", or "下面专门……". If the next lines already contain the substance, name that substance directly: "删除以下写法", "四个槽位", "两个测试", "改写顺序如下".
 ## Quick Checks
 
 Before delivering prose:
@@ -147,6 +149,7 @@ Before delivering prose:
 - Can the sentence answer `对象 / 动作 / 结果 / 落点` without outside context? If not, rewrite it.
 - If you delete the sentence, do you lose only rhythm or attitude but no concrete information? Cut it.
 - Can you swap the main verb for many similar words without changing the meaning much? Replace it with the real operation.
+- Any list intro spending a sentence on posture, scope, or emphasis before the list starts? Replace it with the list content itself.
 - Any AI-style spacing around English words inside Chinese prose? Remove it.
 - Backticks around ordinary concepts or routine identifiers? Remove them unless the text needs exact syntax.
 - Table where a paragraph or diagram would read better? Rewrite it.

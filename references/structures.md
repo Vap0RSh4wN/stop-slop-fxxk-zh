@@ -192,6 +192,7 @@ Use these checks when editing Chinese source-reading notes, protocol notes, and 
 | "`X`放Y" / "这一节讲X" / "这里写X" | Container verbs hide what the file or section actually contains. | Replace `放/讲/写` with `定义/列出/解释/对比/给出/收录`, then name the payload. |
 | "`SKILL.md`放核心规则" / "`examples.md`放示例" | The sentence points to a location but not to the information or when to use it. | State payload plus use moment: "`SKILL.md`定义改写规则，改稿前先看这里" or "`references/examples.md`收录坏句子和对应改写，卡住时先对照这里". |
 | "我先收一遍" / "这个直接落地" | The sentence reports pace or attitude instead of the actual operation. | Replace it with the real action: "我先检查这几处差异" or "我现在把这条规则补进SKILL.md和README". |
+| "这个版本专门……" / "这里重点……" before a list | The sentence spends effort staging the list instead of naming the list content. | Replace it with the content label itself: "删除以下写法", "四个槽位", "两个测试", "改写顺序如下". |
 
 ### Source-Reading Paragraph Shape
 

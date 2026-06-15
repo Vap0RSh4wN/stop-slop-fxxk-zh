@@ -196,3 +196,19 @@
 **Diagnostic:**
 - `带一下` could be replaced by `过一下`, `顺一下`, `看一下`, `收一下`
 - `重写` cannot be swapped out without changing the work itself
+
+---
+
+### Example 16: List Intro Framed by Posture
+
+**Before:**
+> 这个版本专门删这些写法：
+
+**After:**
+> 删除以下写法：
+
+**Changes:** Removed the writer-facing setup and named the list payload directly.
+
+**Diagnostic:**
+- the original line only staged the list
+- the rewrite tells the reader what the list contains in four characters
