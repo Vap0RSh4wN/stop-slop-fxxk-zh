@@ -199,6 +199,15 @@ This section is not exhaustive. New phrases should still be cut when they only r
 - "兜一下"
 - "带一下"
 
+### Colloquial Evaluation in Formal Notes
+
+Treat these as review targets when a formal note could name the mechanism directly:
+
+- "更稳"
+- "更自然"
+- "拦下来"
+- "冒出来"
+
 ### Concept Quotes
 
 Avoid Chinese quotes around ordinary technical terms:

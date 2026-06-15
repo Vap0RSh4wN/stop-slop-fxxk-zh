@@ -112,6 +112,10 @@ Apply these rules directly to Chinese prose. Preserve Chinese as the working lan
 35. **Rewrite low-information sentences with a concrete frame.** When a sentence feels like progress-reporting, explanation-staging, or section-labeling, rewrite it as `对象 -> 动作 -> 结果 -> 落点`. Example: "`SKILL.md`定义改写规则，改稿前先看这里"; "我先检查这几处标题，再把修改写进README"; "这一节列出高风险句型，改稿时对照这里检查".
 
 36. **Introduce lists with the list content, not with writer posture.** Before bullets, numbered steps, or inline enumerations, do not stage the list with lines such as "这个版本专门……", "这里重点……", or "下面专门……". If the next lines already contain the substance, name that substance directly: "删除以下写法", "四个槽位", "两个测试", "改写顺序如下".
+
+37. **Explain rule strength through mechanism, not through praise or metaphor.** When describing why a rule works, avoid lines such as "这套更稳", "自然会拦下来", "新词会冒出来", or "拿 X 冒充 Y" if they replace the actual criterion. Write the coverage condition directly: which sentences the rule catches, which information slots are missing, and why the test still applies when the wording changes.
+
+38. **Keep formal notes literal.** In formal notes, rule descriptions, protocol explanations, and source-reading prose, prefer literal mechanism language over metaphor, spoken filler, or casual evaluation. If a sentence can name the object, operation, condition, or failure mode directly, do not write it as "拦下来", "冒出来", "更稳", "带一下", or another colloquial substitute.
 ## Quick Checks
 
 Before delivering prose:
@@ -150,6 +154,8 @@ Before delivering prose:
 - If you delete the sentence, do you lose only rhythm or attitude but no concrete information? Cut it.
 - Can you swap the main verb for many similar words without changing the meaning much? Replace it with the real operation.
 - Any list intro spending a sentence on posture, scope, or emphasis before the list starts? Replace it with the list content itself.
+- Any rule explanation praising itself as "更稳/更自然" or using metaphors instead of the actual coverage condition? Rewrite it with the mechanism.
+- Any formal note sentence relying on metaphor, spoken filler, or casual evaluation where a literal mechanism sentence would work? Rewrite it literally.
 - Any AI-style spacing around English words inside Chinese prose? Remove it.
 - Backticks around ordinary concepts or routine identifiers? Remove them unless the text needs exact syntax.
 - Table where a paragraph or diagram would read better? Rewrite it.

@@ -212,3 +212,20 @@
 **Diagnostic:**
 - the original line only staged the list
 - the rewrite tells the reader what the list contains in four characters
+
+---
+
+### Example 17: Rule Explanation Written as Praise
+
+**Before:**
+> 这套判据比黑名单更稳。就算以后冒出新的 AI 词，只要句子还在拿状态、姿态、节奏冒充信息，这里照样会把它拦下来。
+
+**After:**
+> 黑名单只能覆盖已经列出的词。四个槽位、删除测试、动词替换测试直接检查句子有没有写出对象、动作、结果、落点；词变了，只要这些信息仍然缺失，这里仍然会把它判成低信息句。
+
+**Changes:** Replaced praise and metaphor with the actual coverage condition and decision rule.
+
+**Diagnostic:**
+- `更稳` only evaluates, it does not explain
+- `冒出` and `拦下来` are scene-building verbs, not criteria
+- the rewrite names the boundary: listed words may change, missing information does not
